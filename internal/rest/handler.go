@@ -15,6 +15,8 @@ func Router() *mux.Router {
 
 	r.HandleFunc("/", homeHandler).Methods("GET")
 
+	r.HandleFunc("/series/", seriesHandler).Methods("GET")
+
 	return r
 }
 
@@ -35,4 +37,10 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	home(w, r)
+}
+
+func seriesHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	getSeries(w, r)
 }
