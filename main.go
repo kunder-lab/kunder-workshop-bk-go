@@ -1,7 +1,7 @@
 package main
 
 import (
-	"koath/internal/rest"
+	"kunder-workshop-bk-go/internal/rest"
 	"log"
 	"net/http"
 
